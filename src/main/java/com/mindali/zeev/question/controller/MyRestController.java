@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyRestController {
     public final GraphService graphService;
 
-    @PostMapping  //get the json body in POST verb
+    @PostMapping("/server")  //get the json body in POST verb
     @SneakyThrows //handle Exceptions in spring style
     public ResponseEntity<?> getSolution(@RequestBody String userData){
         return new ResponseEntity<>(graphService.getNonReach(userData), HttpStatus.OK);
